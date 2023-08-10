@@ -1,0 +1,30 @@
+[workspace]
+members = ["contracts/*", "packages/*"]
+
+[workspace.package]
+version       = "0.0.0"
+authors       = ["Larry Lyu <gm@larry.engineer>"]
+edition       = "2021"
+rust-version  = "1.69.0"
+license       = "TBD"
+homepage      = "https://larry.engineer"
+repository    = "https://github.com/larry0x/cw-template"
+documentation = "https://github.com/larry0x/cw-template#readme"
+keywords      = ["blockchain", "cosmos", "cosmwasm"]
+
+[workspace.dependencies]
+cosmwasm-schema = "1.3"
+cosmwasm-std    = "1.3"
+cw2             = "1.1"
+cw-ownable      = "0.5"
+thiserror       = "1"
+
+[profile.release]
+codegen-units    = 1
+debug            = false
+debug-assertions = false
+incremental      = false
+lto              = true
+opt-level        = 3
+overflow-checks  = true
+rpath            = false
